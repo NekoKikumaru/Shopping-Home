@@ -18,7 +18,12 @@ class LatestAdapter(var productList: ArrayList<Product>): RecyclerView.Adapter<L
             itemView.txtLatestBrand.text = product.brand
             itemView.ratingLatest.rating = product.rating
             itemView.txtLatestPrice.text = product.price.toString()+" KS"
-            itemView.txtLatestDiscount.text = product.discountPrice.toString()+" KS"
+            if(product.discountPercent != 0) {
+                itemView.txtLatestDiscount.text = product.discountPrice.toString()+" KS"
+            }
+            else {
+                itemView.txtLatestDiscount.visibility = View.GONE
+            }
         }
     }
 

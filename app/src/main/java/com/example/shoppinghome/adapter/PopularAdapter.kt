@@ -18,15 +18,16 @@ class PopularAdapter(var popularList: ArrayList<Product>): RecyclerView.Adapter<
             }
             if (product.discountPercent != 0) {
                 itemView.txtDiscountPercent.text = product.discountPercent.toString()+"% off"
+                itemView.txtPopularDiscount.text = product.discountPrice.toString()+" KS"
             }
             else {
                 itemView.txtDiscountPercent.visibility = View.GONE
+                itemView.txtPopularDiscount.visibility = View.GONE
             }
             itemView.txtPopularName.text = product.name
             itemView.txtPopularBrand.text = product.brand
             itemView.ratingPopular.rating = product.rating
             itemView.txtPopularPrice.text = product.price.toString()+" KS"
-            itemView.txtPopularDiscount.text = product.discountPrice.toString()+" KS"
             itemView.imgPopular.setImageResource(product.imgProduct)
         }
     }
