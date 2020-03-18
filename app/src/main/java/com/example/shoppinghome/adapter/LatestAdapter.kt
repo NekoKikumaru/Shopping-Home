@@ -1,5 +1,6 @@
 package com.example.shoppinghome.adapter
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,7 @@ class LatestAdapter(var productList: ArrayList<Product>): RecyclerView.Adapter<L
             itemView.txtLatestPrice.text = product.price.toString()+" KS"
             if(product.discountPercent != 0) {
                 itemView.txtLatestDiscount.text = product.discountPrice.toString()+" KS"
+                itemView.txtLatestDiscount.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
             }
             else {
                 itemView.txtLatestDiscount.visibility = View.GONE

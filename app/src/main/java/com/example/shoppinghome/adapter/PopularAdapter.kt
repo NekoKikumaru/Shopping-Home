@@ -1,5 +1,6 @@
 package com.example.shoppinghome.adapter
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ class PopularAdapter(var popularList: ArrayList<Product>): RecyclerView.Adapter<
             if (product.discountPercent != 0) {
                 itemView.txtDiscountPercent.text = product.discountPercent.toString()+"% off"
                 itemView.txtPopularDiscount.text = product.discountPrice.toString()+" KS"
+                itemView.txtPopularDiscount.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
             }
             else {
                 itemView.txtDiscountPercent.visibility = View.GONE
